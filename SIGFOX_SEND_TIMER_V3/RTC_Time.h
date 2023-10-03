@@ -8,15 +8,17 @@ RTC_DS1307 rtc;
 
 typedef struct RTC_Time_Typedef
 {
-  uint8_t T_Hrs;
+ 
   uint8_t T_min;
-  uint8_t T_Sec;
-  uint8_t Date;
-  uint8_t Day;
-  uint8_t Month;
-  uint16_t Year;
+  uint8_t T_Sec; //
+  uint8_t T_Hrs; 8
+  uint8_t Date; 25
+  uint8_t Day; 1 //
+  uint8_t Month; 9
+  uint16_t Year; 2023
 }RTC_Time_Typedef;
 
+//
 
 void Rtc_Init(void)
 {
