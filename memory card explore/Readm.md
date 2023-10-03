@@ -8,3 +8,30 @@
 
 
 [def]: https://forum.arduino.cc/t/reading-writing-struct-to-sd-card/187722/8
+- example
+```
+void write_STRUCT() {
+
+
+ if (SD.exists(filename)) {
+   SD.remove(filename);
+ }
+
+ File structFile = SD.open(filename, FILE_WRITE);
+ 
+ if (structFile) {
+    structFile.write((uint8_t *)&struct, sizeof(struct));
+ }
+
+ structFile.close();
+}
+
+
+void read_STRUCT() {
+ File structFile = SD.open(filename, FILE_READ);
+ 
+ structFile.read((uint8_t *)&struct, sizeof(struct)/sizeof(uint8_t));
+
+ structFile.close();
+}
+```
